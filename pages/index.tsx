@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import BlogCard from './components/BlogCard';
 
 const index = () => {
 
@@ -24,7 +25,7 @@ const index = () => {
   }, [fullText]);
 
   return (
-    <div className="">
+    <div className=" ">
       <div className="h-[800px] xl:h-[1000px] relative">
         <div className=" absolute  -z-10  opacity-30 bg-[url('/image/Yellow_background-2.jpg')]  bg-cover w-full h-full" />
         <div className="flex md:flex-row flex-col  items-end md:items-center h-full ">
@@ -68,8 +69,19 @@ const index = () => {
         </div>
       </div>
 
+      <div className=' mt-32 w-full max-w-[1090px] mx-auto' >
+        <div className="w-full">
+
+          <BlogCard />
+        </div>
+      </div>
     </div >
   )
+  return (
+    <div className="flex  flex-col   px-4 py-12   bg-[#efefef] min-h-screen min-w-full">
+      <BlogCard />
+    </div>
+  );
 }
 
 export default index

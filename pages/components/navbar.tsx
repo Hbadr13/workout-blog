@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className='fixed z-30 top-0 w-full'>
             <div className="w-full max-w-[1300px] mx-auto relative pt-4 px-2">
                 <div>
-                    <div className="w-full h-16  md:h-20 bg-white  skew-x-0 md:-skew-x-6 p-1 rounded-md">
+                    <div className="w-full h-16  md:h-20 bg-white  skew-x-0 md:-skew-x-6 p-1 rounded-md shadow-lg">
                         <div className=" skew-x-0 md:skew-x-6 w-full h-full pr-3  md:pr-10 flex items-center justify-between">
                             <Image className='w-52 origin-center' src={'/image/logo.svg'} width={1000} height={1000} alt='logo' />
                             <div className=" relative  w-0 hidden md:block md:w-[300px] h-12  rounded-xl ">
