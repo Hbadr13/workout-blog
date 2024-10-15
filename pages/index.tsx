@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import BlogCard from './components/BlogCard';
+import AboutUs from './components/aboutUs';
 
 const index = () => {
 
@@ -70,18 +71,13 @@ const index = () => {
       </div>
 
       <div className=' mt-32 w-full max-w-[1090px] mx-auto' >
-        <div className="w-full">
-
-          <BlogCard />
-        </div>
+        <BlogCard />
+      </div>
+      <div className="mt-40">
+        <AboutUs />
       </div>
     </div >
   )
-  return (
-    <div className="flex  flex-col   px-4 py-12   bg-[#efefef] min-h-screen min-w-full">
-      <BlogCard />
-    </div>
-  );
 }
 
 export default index
