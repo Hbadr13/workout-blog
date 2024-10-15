@@ -17,3 +17,23 @@ export default function App({ Component, pageProps }: AppProps) {
     </div>
   )
 }
+// useEffect(() => {
+//   if (router.isReady && router.query.slug) {
+//     const currentSlug = router.query.slug as string;
+//     setTitle(currentSlug);
+
+//     // Find the blog content based on the slug
+//     const selectedBlog = blogInfo.find((blog) => blog.slug === currentSlug);
+//     if (selectedBlog) {
+//       setBlogContent(selectedBlog);
+//     }
+//   }
+// }, [router.isReady, router.query.slug]);
+
+// useEffect(() => {
+//   if (router.isReady && router.query.slug) {
+//     console.log(router.query)
+//     // Decode the title from the query and set it
+//     setTitle((router.query.slug as string));
+//   }
+// }, [router.isReady, router.query]);

@@ -57,7 +57,7 @@ export default function BlogCard() {
     ];
 
     return (
-        <div className='w-full h-full   space-y-24 flex  justify-center flex-col  items-center'>
+        <div className='w-full h-full  px-4  space-y-24 flex  justify-center flex-col  items-center'>
             {blogData.map((blog, index) => (
                 <Card image={blog.image} title={blog.title} description={blog.description} authorImage={blog.authorImage} authorName={blog.authorName} date={blog.date} comments={blog.comments} />
             ))}

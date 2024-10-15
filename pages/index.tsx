@@ -77,11 +77,7 @@ const index = () => {
       </div>
     </div >
   )
-  return (
-    <div className="flex  flex-col   px-4 py-12   bg-[#efefef] min-h-screen min-w-full">
-      <BlogCard />
-    </div>
-  );
+
 }
 
 export default index

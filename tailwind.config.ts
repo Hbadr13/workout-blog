@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
         colors: {
+          'wr-black-v0': 'rgba(85, 85, 79, 1)',
           'wr-primary': '#FF8139',
           'wr-primary-hover': '#ff6106',
           'wr-primary-dark': '#ed5600',
