@@ -96,7 +96,7 @@ export default function PostPage({ currentFileName }: { currentFileName: string 
           hidden: { opacity: 0, x: 50 }
         }}
         transition={{ duration: 1 }}> */}
-      <div className=' h-full bfg-black flex flex-col  items-center  space-y-5 w-[60%]'>
+      <div className=' h-full bfg-black flex flex-col  items-start p-4 sm:p-10 lg:w-[850px] space-y-5 md:w-[90%] rmd:bg-slate-500 srm:bg-red-600 lrg:bg-blue-500'>
         <div className='w-full'>
           <Image
             src={blogContent.image}
@@ -110,16 +110,16 @@ export default function PostPage({ currentFileName }: { currentFileName: string 
 
         <h1 className="text-3xl mt-10 font-bold mb-4">{blogContent.title}</h1>
         <div className="prose flex items-center justify-center mx-auto">
-          <div className="w-full  flex  flex-col space-x-4  space-y-8 items-cernter justify-center">
+          <div className="w-full  flex  flex-col space-x-4  space-y-8 items-start tbg-red-500 justify-center">
 
             {blogContent.content.map((item: any) => {
               if (item.type === 'small-text') {
                 return (
-                  <div className="text-base  px-4 font-medium   text-wr-black-v0" dangerouslySetInnerHTML={{ __html: item.text }} />
+                  <div className="text-base  ptegx-4 font-medium   text-wr-black-v0" dangerouslySetInnerHTML={{ __html: item.text }} />
                 );
               } else if (item.type === '3awarid' && item.array) {
                 return (
-                  <ul key={item.id} className="list-disc list-inside">
+                  <ul key={item.id} className="list-disc">
                     {item.data.map((dataItem: any) => (
                       <li  className=' text-base font-medium   text-wr-black-v0' key={dataItem.id}>{dataItem.text}</li>
                     ))}
