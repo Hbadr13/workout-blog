@@ -1,0 +1,35 @@
+{
+
+      "Products" : [
+
+        {
+            "id": "Int",
+            "name": "String",
+            "Description": "String",
+            "Product Code": "String",
+            "Category": "String ",
+            "Component type": "String ",
+            "Country": "String",
+            "date": "String",
+            "fav": "Boolean",
+            "Company Name": "String",
+            "Quantity": "Int"
+        },
+
+        {
+            "id": "Int",
+            "name": "String",
+            "Description": "String",
+            "Product Code": "String",
+            "Category": "String ",
+            "Component type": "String ",
+            "Country": "String",
+            "date": "String",
+            "fav": "Boolean",
+            "Company Name": "String",
+            "Quantity": "Int"
+        }
+        
+        
+    ]
+}
