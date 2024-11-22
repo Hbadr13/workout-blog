@@ -12,7 +12,6 @@ export default function PostPage({ currentFileName }: { currentFileName: string 
   const router = useRouter();
   const controls = useAnimation()
   const [title1, setTitle] = useState<string>('');
-  const [email, setEmail] = useState('');
   const [blogContent, setBlogContent] = useState<any>(null);
   const data = [
     {
@@ -189,11 +188,11 @@ export default function PostPage({ currentFileName }: { currentFileName: string 
               else if (item.type === 'other') {
                 return (
                   <div className='w-full h-44  bg-wr-primary/20  flex justify-center items-center text-xl font-bold border-l-[7px]  p-5   border-wr-primary  text-black'>“ A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm. ”.</div>
-              )
+                )
 
-              } else 
+              } else
                 return null;
-              
+
             })}
           </div>
         </div>
@@ -211,43 +210,7 @@ export default function PostPage({ currentFileName }: { currentFileName: string 
           </div>
         </div>
       </div>
-      <div className=' xl:w-[80%]  lg:w-[88%] w-[90%] max-w-[1100px]   lg:h-44 sm:h-60 skefvw-x-12 flex justify-center rounded-lg items-center bg-wr-primary/20'>
-        <div className='w-full  bg-wr-primary  p-4 flex jdustify-center items-center h-[90%] rounded-md -skew-y-2' >
 
-          <div className='flex lg:flex-row  flex-col space-y-7  lg:space-y-0 w-full space-x-2   skew-y-2 justify-center items-center'>
-            <div className='  flex flex-col   lg:w-1/2 w-full  text-white justify-center items-center'>
-              <h1 className='text-white text-3xl  font-bold'> Subscribe To Our Newsletter</h1>
-              <h4 className=' text-sm font-serif'> it is A Long Esablished Fact That A Reader Will Distracted</h4>
-            </div>
-            <div className='flex lg:w-1/2 w-full space-x-8  justify-center items-center flex-col  sm:space-y-0 space-y-5 sm:flex-row '>
-              <div className='md:w-80 w-[99%] h-14 rounded-md flex justify-center items-center  bg-white  -skew-x-6'>
-                <input
-                  className="h-[90%]  px-4   skew-x-6  w-[90%] "
-                  name="senderEmail"
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  maxLength={500}
-                  placeholder="Enter Your  Emai Address..."
-                />
-              </div>
-              <div className=' w-40 h-14   flex   bg-black   rounded-md after:rounded-md  -skew-x-12    after:left-0 after:bg-orange-600 after:h-full  after:w-0   after:transition-all after:bottom-0   hover:after:w-full  after:duration-500 justify-start  items-enter relative  '>
-                <button className=' absolute  flex  bg-sblack w-full h-full justify-center      items-center space-x-4'>
-
-                  <a className="text-white text-md skew-x-12 flex justify-center items-center">
-                    Subscribe Now
-                  </a>
-
-                  <div className=' w-1 h-full -skew-fsx-12      text-white  bg-white'></div>
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
     </div>
   );
 }
