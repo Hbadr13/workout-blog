@@ -94,7 +94,7 @@ const Footer = () => {
                         <div className='flex lg:flex-row  flex-col space-y-7  lg:space-y-0 w-full space-x-2   skew-y-2 justify-center items-center'>
                             <div className='  flex flex-col   lg:w-1/2 w-full  text-white justify-center items-center'>
                                 <h1 className='text-white text-3xl  font-bold'> Subscribe To Our Newsletter</h1>
-                                <h4 className=' text-sm'> it is A Long Esablished Fact That A Reader Will Distracted</h4>
+                                <h4 className=' text-sm'> it is A  Long Esablished Fact That A Reader Will Distracted</h4>
                             </div>
                             <div className='flex lg:w-1/2 w-full space-x-8  justify-center items-center flex-col  sm:space-y-0 space-y-5 sm:flex-row '>
                                 <div className='md:w-80 w-[99%] h-14 rounded-md flex justify-center items-center  bg-white  -skew-x-6'>
