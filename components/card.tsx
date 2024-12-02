@@ -1,104 +1,105 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { useRouter } from 'next/navigation';
-import slug from "../slug/[slug]"
-const Card = ({ image, title, description, authorImage, authorName, date, comments }: { comments: string, image: string, title: string, description: string, authorImage: string, authorName: string, date: string }) => {
-    const router = useRouter();
-    const controls = useAnimation();
-    const { ref, inView } = useInView({
-        threshold: 0.3,
-        triggerOnce: true,
-    });
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-    useEffect(() => {
-        if (inView) {
-            controls.start("visible");
-        }
-    }, [controls, inView]);
-    const profailamis = (title: string,) => {
-        // Implement the functionality for profailamis
-        // For example, you can navigate to a new page or perform an action here
-        router.push(`/slug/${title}`);
-    };
-    return (
+const Card = ({
+  imageUrl,
+  title,
+  description,
+  slug,
+}: {
+  imageUrl: string;
+  title: string;
+  description: string;
+  slug :string;
+}) => {
+  const router = useRouter();
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
 
-        <div ref={ref} className=' w-[95%] sm:w-[80%]  sm:h-[600px]    md:h-[650px]  lg:h-[700px]  h-[550px]    flex   justify-start items-start relative '>
-            <div className='bg-white  w-full  rounded-lg h-full shadow-xl   mt-5 -skew-y-3 '></div>
-            <div className='hover:bg-black hover:w-10 hover:h-full   h-full    hover:translate-x-14 duration-200 '></div>
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+  const profailamis = (title: string) => {
+    // Implement the functionality for profailamis
+    // For example, you can navigate to a new page or perform an action here
+    router.push(`/slug/${title}`);
+  };
+  return (
+    <div
+      ref={ref}
+      className=" w-[95%] sm:w-[80%]  sm:h-[600px]    md:h-[650px]  lg:h-[700px]  h-[550px]    flex   justify-start items-start relative "
+    >
+      <div className="  w-full  rounded-lg h-full shadow-xl   mt-5 -skew-y-3 "></div>
+      <div className="hover:bg-black hover:w-10 hover:h-full   h-full    hover:translate-x-14 duration-200 "></div>
 
-            <div className="  w-full  absolute h-full   flex   items-center  flex-col">
-                <motion.div className='w-[95%]  sm:h-[50%] md:h-[60%] h-[40%]' initial={{ opacity: 0, x: 50 }}
-                    animate={controls}
-                    variants={{
-                        visible: { opacity: 1, x: 0 },
-                        hidden: { opacity: 0, x: 50 }
-                    }}// Link to animation controls
-
-                    transition={{ duration: 1 }}>
-
-                    <Image
-                        src={image}
-                        alt="Fitness Image"
-                        width={250}
-                        height={300}
-                        className=" w-full  h-full rounded-md object-cover"
-                    />
-                </motion.div>
-                <div className="p-6 w-full ">
-                    <motion.div initial={{ opacity: 0, x: -50 }}
-                        animate={controls}
-                        variants={{
-                            visible: { opacity: 1, x: 0 },
-                            hidden: { opacity: 0, x: -50 }
-                        }}
-                        transition={{ duration: 1 }} className="flex items-center mb-4">
-                        <Image
-                            src={authorImage}
-                            alt="Author"
-                            width={40}
-                            height={40}
-                            className="w-14 h-14 ml-5 rounded-full"
-                        />
-                        <div className=" ml-5 space-x-4   justify-center  items-center flex flex-row">
-                            <p className="text-gray-600   text-sm">{authorName}</p>
-                            <div className='w-2 h-2 rounded-full  bg-wr-primary ' />
-                            <p className="text-gray-400 mt-[2px] text-xs">{date} • {comments}</p>
-                        </div>
-                    </motion.div>
-                    <motion.div initial={{ opacity: 0, x: 50 }}
-                        animate={controls}
-                        variants={{
-                            visible: { opacity: 1, x: 0 },
-                            hidden: { opacity: 0, x: 50 }
-                        }}
-                        transition={{ duration: 1 }} className='w-full  flex  flex-col   bg-dblack px-2 space-y-4  justify-start items-start'>
-
-                        <button className="text-2xl text-black   hover:text-wr-primary font-bold ">{title}</button>
-                        <p className="text-gray-600 ml-2  text-md"> {description}</p>
-                        <div className=' w-40 h-12   flex   bg-wr-primary   rounded-md after:rounded-md  -skew-x-12    after:left-0 after:bg-orange-500 after:h-full  after:w-0   after:transition-all after:bottom-0   hover:after:w-full  after:duration-500 justify-start  items-enter relative  '>
-                            <button  onClick={() => profailamis("make-you-better-at-fitness")} className=' absolute  flex  bg-sblack w-full h-full justify-center      items-center space-x-4'>
-                                
-                                <a  className="text-white text-xl skew-x-12 flex justify-center items-center">
-                                    Read More
-                                </a>
+      <div className="  w-full  absolute h-full   flex   items-center  flex-col">
+        <motion.div
+          className="w-[95%]   sm:h-[50%] md:h-[60%] h-[40%]"
 
 
-                                <div className=' w-1 h-full -skew-fsx-12      text-white  bg-white'></div>
-                            </button>
-                        </div>
 
-                    </motion.div>
+
+          
+          initial={{ opacity: 0, x: 50 }}
+          animate={controls}
+          variants={{
+            visible: { opacity: 1, x: 0 },
+            hidden: { opacity: 0, x: 50 },
+          }} // Link to animation controls
+          transition={{ duration: 1 }}
+        >
+          <img
+            src="https://images.pexels.com/photos/19387205/pexels-photo-19387205/free-photo-of-laptop-by-monitor-on-desk.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Fitness Image"
+            className="w-full h-full rounded-md object-cover"
+          />
+        </motion.div>
+        <div className="p-6 w-full mt-10 ml-3 ">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={controls}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: 50 },
+            }}
+            transition={{ duration: 1 }}
+            className="w-full  flex  flex-col   bg-dblack px-2 space-y-4  justify-start items-start"
+          >
+            <button className="text-2xl text-black   hover:text-wr-primary font-bold ">
+              {title}
+            </button>
+            <p className="text-gray-600 ml-2  text-md"> {description}</p>
+            <div className=" w-40 h-12   flex   bg-wr-primary   rounded-md after:rounded-md  -skew-x-12    after:left-0 after:bg-orange-500 after:h-full  after:w-0   after:transition-all after:bottom-0   hover:after:w-full  after:duration-500 justify-start  items-enter relative  ">
+              <Link
+                href={`/blog/${slug}`}
+                className=" absolute  flex  bg-sblack w-full h-full justify-center      items-center space-x-4"
+              >
+                <div className="text-white text-xl skew-x-12 flex justify-center items-center">
+                  Read More
                 </div>
+               
+            
+              
+
+                <div className=" w-1 h-full -skew-fsx-12      text-white  bg-white"></div>
+              </Link>
             </div>
+          </motion.div>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
-export default Card
+export default Card;
 // Example array containing blog data
-
-
-

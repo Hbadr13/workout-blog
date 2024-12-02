@@ -240,11 +240,11 @@ type Props = {
 
 export default function BlogPage({ data, htmlContent }: { data: any; htmlContent: string }) {
   return (
-    <div className=" mt-32 w-[1020px] mx-auto">
+    <div className=" mt-32  text-black  w-[1020px] mx-auto">
       <div className="flex">
         <div className="px-16">
           <h1>{data.title}</h1>
-          <div className="prose dark:prose-invert font-normal" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          <div className="prose dark:prose-invert  text-black font-normal" dangerouslySetInnerHTML={{ __html: htmlContent }} />
 
           {/* <div dangerouslySetInnerHTML={{ __html: htmlContent }} /> */}
         </div>
