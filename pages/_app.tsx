@@ -15,7 +15,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <div className={`${space_Grotesk.className}  bg-white text-black font-bold`}>
       <Navbar />
       <Component {...pageProps} />
+
+
       <Footer />
+
     </div>
   )
 }

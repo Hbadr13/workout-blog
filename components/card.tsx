@@ -64,7 +64,7 @@ const Card = ({
             className="w-full h-full rounded-md object-cover"
           />
         </motion.div>
-        <div className="p-6 w-full mt-10 ml-3 ">
+        <div className="p-6   w-full mt-10 ml-3 ">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={controls}
@@ -73,13 +73,13 @@ const Card = ({
               hidden: { opacity: 0, x: 50 },
             }}
             transition={{ duration: 1 }}
-            className="w-full  flex  flex-col   bg-dblack px-2 space-y-4  justify-start items-start"
+            className="w-full  flex  flex-col   justify-center items-center  bgg-blue-500  bg-dblack px-2 space-y-4  "
           >
-            <button className="text-2xl text-black   hover:text-wr-primary font-bold ">
+            <button className="text-2xl text-black   hover:text-blue-600 font-bold ">
               {title}
             </button>
             <p className="text-gray-600 ml-2  text-md"> {description}</p>
-            <div className=" w-40 h-12   flex   bg-wr-primary   rounded-md after:rounded-md  -skew-x-12    after:left-0 after:bg-orange-500 after:h-full  after:w-0   after:transition-all after:bottom-0   hover:after:w-full  after:duration-500 justify-start  items-enter relative  ">
+            <div className=" w-40 h-12   flex   bg-blue-600   rounded-md after:rounded-md  -skew-x-12    after:left-0 after:bg-blue-500 after:h-full  after:w-0   after:transition-all after:bottom-0   hover:after:w-full  after:duration-500 justify-start  items-enter relative  ">
               <Link
                 href={`/blog/${slug}`}
                 className=" absolute  flex  bg-sblack w-full h-full justify-center      items-center space-x-4"
@@ -91,7 +91,7 @@ const Card = ({
             
               
 
-                <div className=" w-1 h-full -skew-fsx-12      text-white  bg-white"></div>
+                <div className=" w-1 h-full -skew-fsx-12      text-white  bg-black"></div>
               </Link>
             </div>
           </motion.div>
