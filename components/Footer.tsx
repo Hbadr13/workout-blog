@@ -87,9 +87,9 @@ const Footer = () => {
 
     return (
         <footer className=" relative">
-            <div className="absolute z-0 top-32 rounded-l-full -rotate-12  -right-52  w-1/2 h-96 bg-gradient-to-l from-wr-primary-dark/20 to-wr-primary-dark/0"></div>
-            <div className=" relative  z-10 overflow-hidden bg-gradient-to-br from-wr-primary-dark/5 to-wr-primary-dark/15">
-                <div className=' relative z-10 xl:w-[80%]  lg:w-[88%] w-[90%] max-w-[1100px]  mx-auto lg:h-44 sm:h-60 skefvw-x-12 flex justify-center rounded-lg items-center bg-blue-200 my-20'>
+            {/* <div className="absolute z-0 top-32 rounded-l-full -rotate-12  -right-52  w-1/2 h-96 bg-gradient-to-l from-wr-primary-dark/20 to-wr-primary-dark/0"></div> */}
+            <div className=" relative  z-10 overflow-hidden bg-blue-100 from-wr-primary-dark/5 to-wr-primary-dark/15">
+                <div className=' relative z-10 xl:w-[80%]  lg:w-[88%] w-[90%] max-w-[1100px]  mx-auto lg:h-64 sm:h-60 skefvw-x-12 flex justify-center rounded-lg items-center bg-blue-200 my-20'>
                     <div className='w-full  bg-blue-500  p-4 flex jdustify-center items-center h-[90%] rounded-md -skew-y-2' >
                         <div className='flex lg:flex-row  flex-col space-y-7  lg:space-y-0 w-full space-x-2   skew-y-2 justify-center items-center'>
                             <div className='  flex flex-col   lg:w-1/2 w-full  text-white justify-center items-center'>
@@ -127,21 +127,21 @@ const Footer = () => {
                 </div>
                 <div className="relative overflow-hidden pt-20 ">
                     <div className=" absolute z-20  w-72 h-72 bottom-0 -left-72 rounded-xl opacity-15 shadow-[200px_80px_100px_rgba(255,129,57,1)]" />
-                    <div className=" absolute z-20 animate-spinCustom -left-[30%] -top-[100%]">
+                    {/* <div className=" absolute z-20 animate-spinCustom -left-[30%] -top-[100%]">
                         <CircleSvgRotation />
                     </div>
                     <div className=" absolute z-20 animate-spinCustom -right-[30%] -bottom-[40%]">
                         <CircleSvgRotation />
-                    </div>
-                    <div className="container relative z-10 w-full max-w-[1200px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-10">
+                    </div> */}
+                    <div className="container relative z-10 w-full  max-w-[1200px] mx-auto px-4 ">
 
-                        <div>
+                        <div className='w-full flex justify-center items-center flex-col'>
                             {/* <Image className='w-52 origin-center' src={'/image/logo.svg'} width={1000} height={1000} alt='logo' /> */}
-                            <p className=" font-normal  mt-10">
+                            <p className=" font-normal    flex justify-center items-center w-full mt-10">
                                 A wonderful serenity has taken possession of my entire soul, like
                                 these.
                             </p>
-                            <div className="mt-4">
+                            <div className="mt-4  flex  flex-col  justify-center items-center">
                                 <h4 className="font-semibold mb-2">Our Socials</h4>
                                 <div className="flex space-x-4">
                                     {
@@ -152,7 +152,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-
+{/* 
                         <div>
                             <div className="">
                                 <h3 className="text-2xl font-bold mb-4">Blog Posts</h3>
@@ -178,8 +178,8 @@ const Footer = () => {
                                 </li>
                             </ul>
 
-                        </div>
-                        <div>
+                        </div> */}
+                        {/* <div>
                             <div className="">
                                 <h3 className="text-2xl font-bold mb-4">Locations</h3>
                                 <div className=' w-24 h-1.5   flex   bg-blue-500   rounded-sm  -skew-x-12    after:translate-x-[70px] after:bg-orange-100 after:h-full  after:w-3   after:transition-all after:bottom-0 justify-start  items-enter relative  ' />
@@ -191,8 +191,8 @@ const Footer = () => {
                                 1559 Alabama Ave SE, DC 20032, Washington, USA
                             </p>
                             <MapSvg className='mt-4' color='orange' />
-                        </div>
-                        <div>
+                        </div> */}
+                        {/* <div>
                             <div className="">
                                 <h3 className="text-2xl font-bold mb-4">Working Hours</h3>
                                 <div className=' w-24 h-1.5   flex   bg-blue-00   rounded-sm  -skew-x-12    after:translate-x-[70px] after:bg-orange-100 after:h-full  after:w-3   after:transition-all after:bottom-0 justify-start  items-enter relative  ' />
@@ -223,7 +223,7 @@ const Footer = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div className="mt-8 text-center border-t border-gray-300 py-8">

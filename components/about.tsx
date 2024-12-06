@@ -8,7 +8,7 @@ const About = () => {
     };
 
     return (
-        <section className="bg-[#e0e1e7] p-8 md:p-16">
+        <section className="bg-blue-50 p-8 md:p-16">
             <div className="max-w-5xl  flex  flex-col  md:flex-row space-x-5 mx-auto">
                 <div className=' w-full md:w-1/2 flex justify-start flex-col p-6 items-start  fdgbg-red-600'>
 

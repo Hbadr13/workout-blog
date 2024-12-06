@@ -15,7 +15,7 @@ const Card = ({
   imageUrl: string;
   title: string;
   description: string;
-  slug :string;
+  slug: string;
 }) => {
   const router = useRouter();
   const controls = useAnimation();
@@ -37,19 +37,14 @@ const Card = ({
   return (
     <div
       ref={ref}
-      className=" w-[95%] sm:w-[80%]  sm:h-[600px]    md:h-[650px]  lg:h-[700px]  h-[550px]    flex   justify-start items-start relative "
+      className=" w-[95%] sm:w-[80%]  sm:h-[600px]  bg   md:h-[650px]  lg:h-[700px]  h-[550px]    flex   justify-start items-start relative "
     >
-      <div className="  w-full  rounded-lg h-full shadow-xl   mt-5 -skew-y-3 "></div>
+      <div className="  w-full  rounded-lg h-full shadow-xl    bg-blue-50 mt-5 -skew-y-3 "></div>
       <div className="hover:bg-black hover:w-10 hover:h-full   h-full    hover:translate-x-14 duration-200 "></div>
 
       <div className="  w-full  absolute h-full   flex   items-center  flex-col">
         <motion.div
           className="w-[95%]   sm:h-[50%] md:h-[60%] h-[40%]"
-
-
-
-
-          
           initial={{ opacity: 0, x: 50 }}
           animate={controls}
           variants={{
@@ -64,7 +59,7 @@ const Card = ({
             className="w-full h-full rounded-md object-cover"
           />
         </motion.div>
-        <div className="p-6   w-full mt-10 ml-3 ">
+        <div className="p-6    w-full mt-10 ml-3 ">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={controls}
@@ -87,11 +82,8 @@ const Card = ({
                 <div className="text-white text-xl skew-x-12 flex justify-center items-center">
                   Read More
                 </div>
-               
-            
-              
 
-                <div className=" w-1 h-full -skew-fsx-12      text-white  bg-black"></div>
+                <div className=" w-1 h-full -skew-fsx-12      text-white  bg-white"></div>
               </Link>
             </div>
           </motion.div>
