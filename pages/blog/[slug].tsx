@@ -233,6 +233,50 @@ import { rehypePrettyCode } from 'rehype-pretty-code';
 import { transformerCopyButton } from '@rehype-pretty/transformers';
 import remarkGfm from 'remark-gfm';
 import DemoSlider from '@/components/DemoSlider';
+  const data_1 = [
+    {
+      "id": 1,
+      "title": "ARE AWESOME",
+      "tagline": "NEXTJS 13 & SWIPER SLIDER",
+      "image": "/image1.jpg",
+      "buttons": [
+        {
+          "id": 1,
+          "text": "Roberto Nickson",
+          "link": "https://www.pexels.com/@rpnickson/",
+          "type": "btn-dark btn-circle"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "GIVE IT A SHOOT",
+      "tagline": "IF YOU LIKE IT",
+      "image": "/image2.jpg",
+      "buttons": [
+        {
+          "id": 1,
+          "text": "Julia M Cameron",
+          "link": "https://www.pexels.com/@julia-m-cameron/",
+          "type": "btn-dark btn-circle"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ARE AWESOME",
+      "tagline": "NEXTJS 13 & SWIPER SLIDER",
+      "image": "/image1.jpg",
+      "buttons": [
+        {
+          "id": 1,
+          "text": "Roberto Nickson",
+          "link": "https://www.pexels.com/@rpnickson/",
+          "type": "btn-dark btn-circle"
+        }
+      ]
+    },
+  ]
 
 type Props = {
   params: { slug: string };
@@ -240,7 +284,7 @@ type Props = {
 
 export default function BlogPage({ data, htmlContent }: { data: any; htmlContent: string }) {
   return (
-    <div className=" mt-32  text-black  w-[1020px] mx-auto">
+    <div className=" mt-32  text-black   flex justify-center items-center flex-col w-[1020px] mx-auto">
       <div className="flex">
         <div className="px-16">
           <h1>{data.title}</h1>
@@ -249,18 +293,18 @@ export default function BlogPage({ data, htmlContent }: { data: any; htmlContent
           {/* <div dangerouslySetInnerHTML={{ __html: htmlContent }} /> */}
         </div>
       </div>
-      <div className='flex w-full   space-y-4   flex-col   '>
-        <div className='flex space-y-2 flex-col'>
+      <div className='flex w-[90%]    space-y-4  dfbg-black py-8  flex-col   '>
+        <div className='flex space-y-2  ml-20 flex-col'>
           <h1 className=' text-black ml-2 text-xl font-serif'>Related Blogs</h1>
-          <div className=' w-32 h-1   justify-end  flex ml-2    bg-wr-primary   roundeffd-md  -skew-x-12      items-enter relative  '>
+          <div className=' w-32 h-1   justify-end  flex ml-2    bg-blue-500 roundeffd-md  -skew-x-12      items-enter relative  '>
             <div className=' w-1 h-full -skew-fsx-12   mr-5     text-white  bg-white'></div>
           </div>
 
         </div>
         <div className='w-full   flex justify-center items-center'>
 
-          {/* <DemoSlider data={data} /> */}
-        </div>
+          <DemoSlider data={data_1} />
+                   </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Icon } from '@iconify/react';
 const transition = {
   type: "spring",
   mass: 0.5,
@@ -56,9 +57,10 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] "
+        className="cursor-pointer text-black  flex flex-row hover:opacity-[0.9] "
       >
         {item}
+        <Icon icon="lucide:chevron-down" width="20" height="20" className="mt-1 ml-1" /> 
       </motion.p>
       {active !== null && (
         <motion.div
@@ -109,15 +111,15 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="fixed z-30 top-0 w-full">
+    <div className="fixed z-30 top-4  w-full">
       <div className="w-full max-w-[1300px] mx-auto relative pt-4 px-2">
         <div>
-          <div className="w-full h-16  md:h-20 bg-blue-50  skew-x-0 md:-skew-x-6 p-1 rounded-md shadow-lg">
+          <div className="w-full h-16  md:h-20 bg-blue-50 border-2 border-blue-300  skew-x-0 md:-skew-x-6 p-1 rounded-md shadow-lg">
             <div className=" skew-x-0 md:skew-x-6 w-full h-full pr-3  md:pr-10 flex items-center justify-between">
               <Link href={"/"}>
                 <Image
-                  className="w-52 origin-center"
-                  src={"/image/logo.svg"}
+                  className=" w-60 origin-center"
+                  src={"/logo.png"}
                   width={1000}
                   height={1000}
                   alt="logo"
@@ -125,7 +127,7 @@ const Navbar = () => {
               </Link>
               <Menu setActive={setActive}>
                 <HoveredLink href="#">Home</HoveredLink>
-                <MenuItem setActive={setActive} active={active} item="Fitness">
+                <MenuItem setActive={setActive} active={active} item="Categories">
                   <div className="flex  flex-col space-y-6 md:px-6">
                     <HoveredLink href="#">All</HoveredLink>
                     <HoveredLink href="#">

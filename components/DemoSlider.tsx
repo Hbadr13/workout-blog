@@ -34,7 +34,7 @@ interface DemoSliderProps {
 
 const DemoSlider: React.FC<DemoSliderProps> = ({ data }) => {
     return (
-        <div className="md:w-full  sm:w-96 w-80">
+        <div className="md:w-[80%]  sm:w-96 w-80">
             <div className="h-full ">
                 <Swiper
                     navigation
