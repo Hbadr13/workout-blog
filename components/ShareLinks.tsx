@@ -24,7 +24,6 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL+pathname+'?'+searchParams
       color: "white",
     }
   };
-  <div className="overflow-y-hidden overflow-hidden"></div>
   return (
     <ShareSocial
     
