@@ -5,7 +5,10 @@ import {ShareSocial} from 'react-share-social'
 const ShareButtons = ({ text, url }:{ text:string, url :string}) => {
  const pathname= usePathname()
  const searchParams = useSearchParams(); // Retrieves the search parameters (e.g., "?x=hello&y=1")
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL+pathname+ searchParams?'?':''+searchParams
+  let baseUrl = process.env.NEXT_PUBLIC_BASE_URL + pathname
+  baseUrl += searchParams.toString() ? '?' : ''
+  baseUrl += searchParams.toString()
+  console.log(baseUrl)
   const style = {
     root: {
       background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
