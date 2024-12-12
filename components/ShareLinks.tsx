@@ -17,8 +17,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL+pathname+'?'+searchParams
     copyContainer: {
       border: "1px solid blue",
       background: "rgb(0,0,0,0.7)",
-      overflow: 'hidden'
-    },
+      overflow: 'hidden'    },
     
     title: {
       color: "white",
