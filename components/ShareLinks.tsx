@@ -1,8 +1,11 @@
-import React from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import React, { useEffect } from 'react';
 import {ShareSocial} from 'react-share-social' 
 
 const ShareButtons = ({ text, url }:{ text:string, url :string}) => {
- 
+ const pathname= usePathname()
+ const searchParams = useSearchParams(); // Retrieves the search parameters (e.g., "?x=hello&y=1")
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL+pathname+'?'+searchParams
   const style = {
     root: {
       background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
@@ -13,13 +16,15 @@ const ShareButtons = ({ text, url }:{ text:string, url :string}) => {
     },
     copyContainer: {
       border: "1px solid blue",
-      background: "rgb(0,0,0,0.7)"
+      background: "rgb(0,0,0,0.7)",
+      overflow: 'hidden'
     },
+    
     title: {
       color: "white",
-      // fontStyle: ""
     }
   };
+  <div className="overflow-y-hidden overflow-hidden"></div>
   return (
     <ShareSocial
     
@@ -34,10 +39,10 @@ const ShareButtons = ({ text, url }:{ text:string, url :string}) => {
         "email"
       ]}
       
-      url="https://www.healthline.com/health/fitness-exercise/pull-up-prep"
-      onSocialButtonClicked={(buttonName) => {
-        console.log(`${buttonName} clicked text`);
-      }}
+      url={baseUrl}
+      // onSocialButtonClicked={(buttonName) => {
+      //   console.log(`${buttonName} clicked text`);
+      // }}
       title="Let’s build a community dedicated to better health and wellness. Remember, your fitness journey doesn’t just impact you—it can inspire others too!"
       style={style}
     />
