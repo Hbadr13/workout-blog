@@ -1,5 +1,5 @@
 ---
-title: Deploying Next.js Apps
+title: starting your fitness journey
 description:  A guide to starting your fitness journey, building healthy habits, and achieving your goals step by step.
 imageURl: https://images.pexels.com/photos/19387205/pexels-photo-19387205/free-photo-of-laptop-by-monitor-on-desk.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 slug: learn-about-fitness
@@ -93,5 +93,3 @@ Your fitness journey is a unique path filled with personal milestones and growth
 ## Share Your Fitness Journey
 
 Found this guide helpful? Share it with friends and family to inspire their fitness journeys! Use the social sharing buttons above or simply share the link.
-
-Let’s build a community dedicated to better health and wellness. Remember, your fitness journey doesn’t just impact you—it can inspire others too!

@@ -95,6 +95,30 @@ const Navbar = () => {
   const [active, setActive] = useState<string | null>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY) {
+        setIsVisible(false); 
+      } else {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -111,7 +135,11 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="fixed z-30 top-4  w-full">
+    <div
+    className={`fixed top-0 z-30 w-full transition-transform duration-300 ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
+    } py-4`}
+  >
       <div className="w-full max-w-[1300px] mx-auto relative pt-4 px-2">
         <div>
           <div className="w-full h-16  md:h-20 bg-blue-50 border-2 border-blue-300  skew-x-0 md:-skew-x-6 p-1 rounded-md shadow-lg">
