@@ -110,7 +110,6 @@ import About from "@/components/about";
 // }
 
 // export default index
-// export default index
 
 import fs, { readFileSync } from "fs";
 import matter from "gray-matter";
