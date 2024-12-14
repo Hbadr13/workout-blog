@@ -1,6 +1,7 @@
 ---
 title: starting your fitness journey
 description:  A guide to starting your fitness journey, building healthy habits, and achieving your goals step by step.
+category: fitness
 imageURl: https://images.pexels.com/photos/19387205/pexels-photo-19387205/free-photo-of-laptop-by-monitor-on-desk.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 slug: learn-about-fitness
 date: "2023-01-02"

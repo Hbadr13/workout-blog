@@ -162,7 +162,7 @@ const BlogList = ({ blogs }: { blogs: BlogType[] }) => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 3 }}
-              className="text-xs md:text-lg lg:text-2xl h-20"
+              className="text-xs md:text-lg  lg:text-xl h-20"
             >
               {" "}
               {displayedText}

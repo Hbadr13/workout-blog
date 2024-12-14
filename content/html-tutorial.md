@@ -2,6 +2,7 @@
 title: Fitness Journey
 slug: html-tutorial
 description: A guide to starting your fitness journey, building healthy habits, and achieving your goals step by step.
+category: beauty
 imageURl: https://images.pexels.com/photos/3757376/pexels-photo-3757376.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 ---
 
