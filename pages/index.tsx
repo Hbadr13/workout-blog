@@ -110,6 +110,7 @@ import About from "@/components/about";
 // }
 
 // export default index
+// export default index
 
 import fs, { readFileSync } from "fs";
 import matter from "gray-matter";
@@ -212,18 +213,18 @@ const BlogList = ({ blogs }: { blogs: BlogType[] }) => {
                 slug={blog.slug}
               />
               {index === 1 && (
-               <div className="   w-60    h-16   flex   bg-blue-600   rounded-md after:rounded-md  -skew-x-12    after:left-0 after:bg-blue-500 after:h-full  after:w-0   after:transition-all after:bottom-0   hover:after:w-full  after:duration-500 justify-start  items-enter relative  ">
-               <Link
-                 href={''}
-                 className=" absolute  flex  bg-sblack w-full h-full justify-center      items-center space-x-4"
-               >
-                 <div className="text-white text-lg skew-x-12 flex justify-center items-center">
-                 Explore More Fitness
-                 </div>
- 
-                 <div className=" w-1 h-full -skew-fsx-12      text-white  bg-white"></div>
-               </Link>
-             </div>
+                <div className="   w-60    h-16   flex   bg-blue-600   rounded-md after:rounded-md  -skew-x-12    after:left-0 after:bg-blue-500 after:h-full  after:w-0   after:transition-all after:bottom-0   hover:after:w-full  after:duration-500 justify-start  items-enter relative  ">
+                  <Link
+                    href={''}
+                    className=" absolute  flex  bg-sblack w-full h-full justify-center      items-center space-x-4"
+                  >
+                    <div className="text-white text-lg skew-x-12 flex justify-center items-center">
+                      Explore More Fitness
+                    </div>
+
+                    <div className=" w-1 h-full -skew-fsx-12      text-white  bg-white"></div>
+                  </Link>
+                </div>
               )}
             </React.Fragment>
           ))}
