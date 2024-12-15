@@ -205,16 +205,20 @@ const BlogList = ({ blogs }: { blogs: BlogType[] }) => {
         <div className="w-full h-full px-4 space-y-24 flex justify-center flex-col items-center">
           {blogs.map((blog: BlogType, index: number) => (
             <React.Fragment key={index}>
-              <Card
+              {
+                index <= 1 && (
+
+                <Card
                 imageUrl={blog.imageUrl ? blog.imageUrl : "/image2.jpg"}
                 title={blog.title}
                 description={blog.description}
                 slug={blog.slug}
-              />
+                />)
+              }
               {index === 1 && (
                 <div className="   w-60    h-16   flex   bg-blue-600   rounded-md after:rounded-md  -skew-x-12    after:left-0 after:bg-blue-500 after:h-full  after:w-0   after:transition-all after:bottom-0   hover:after:w-full  after:duration-500 justify-start  items-enter relative  ">
                   <Link
-                    href={''}
+                    href={'/categories/all'}
                     className=" absolute  flex  bg-sblack w-full h-full justify-center      items-center space-x-4"
                   >
                     <div className="text-white text-lg skew-x-12 flex justify-center items-center">

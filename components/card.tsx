@@ -37,9 +37,9 @@ const Card = ({
   return (
     <div
       ref={ref}
-      className=" w-[95%] sm:w-[60%]  sm:h-[600px]     md:h-[500px]  lg:h-[500px]  h-[450px]      flex   justify-start items-start relative "
+      className=" w-[95%] sm:w-[70%]  sm:h-[600px]     md:h-[500px]  lg:h-[500px]  h-[450px]      flex   justify-start items-start relative "
     >
-      <div className="  w-full  rounded-lg h-full shadow-xl    bg-blue-50  mt-2 -skew-y-3 "></div>
+      <div className="  w-full  rounded-lg  shadow-xl  mt-2 -skew-y-3 "></div>
       {/* <div className="hover:bg-black hover:w-10 hover:h-full   h-full    hover:translate-x-14 duration-200 "></div> */}
 
       <div className="  w-full  absolute h-full    flex   items-center  flex-col">
@@ -59,7 +59,7 @@ const Card = ({
             className="w-full h-full  skehgfw-y-3 rounded-md object-cover"
           />
         </motion.div>
-        <div className="p-6    w-full mt-10 ml-3 ">
+        <div className="p-6   h-auto bg-blackff    w-full mt-10 ml-3 ">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={controls}
