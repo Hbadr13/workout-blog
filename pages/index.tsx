@@ -201,39 +201,43 @@ const BlogList = ({ blogs }: { blogs: BlogType[] }) => {
         </div>
       </div>
 
-      <div className=" mt-32   w-screen max-w-[1090px] mx-auto">
-        <div className="w-full h-full px-4 space-y-24 flex justify-center flex-col items-center">
-          {blogs.map((blog: BlogType, index: number) => (
-            <React.Fragment key={index}>
-              {
-                index <= 1 && (
+      <div className=" mt-32   w-screen max-w-[1200px] mx-auto">
+        <div className="w-full h-full px-4 space-y-8 flex justify-center flex-col items-center">
+          <div className=" w-full  px-6  bfg-red-800 sm:text-left text-4xl text-blue-600 font-bold  text-capitalize m-0">
+            Top Stories
+          </div>
+          <div className="w-full h-full px-4 space-x-10 flex justify-center flex-row items-center">
+            {blogs.map((blog: BlogType, index: number) => (
+              <React.Fragment key={index}>
+                {index <= 2 && (
+                  <Card
+                    imageUrl={blog.imageUrl ? blog.imageUrl : "/image2.jpg"}
+                    title={blog.title}
+                    description={blog.description}
+                    slug={blog.slug}
+                  />
+                )}
+                {/* {index === 2 && (
+                  <div className="   w-60    h-16   flex   bg-blue-600   rounded-md after:rounded-md  -skew-x-12    after:left-0 after:bg-blue-500 after:h-full  after:w-0   after:transition-all after:bottom-0   hover:after:w-full  after:duration-500 justify-start  items-enter relative  ">
+                    <Link
+                      href={"/categories/all"}
+                      className=" absolute  flex  bg-sblack w-full h-full justify-center      items-center space-x-4"
+                    >
+                      <div className="text-white text-lg skew-x-12 flex justify-center items-center">
+                        Explore More Fitness
+                      </div>
 
-                <Card
-                imageUrl={blog.imageUrl ? blog.imageUrl : "/image2.jpg"}
-                title={blog.title}
-                description={blog.description}
-                slug={blog.slug}
-                />)
-              }
-              {index === 1 && (
-                <div className="   w-60    h-16   flex   bg-blue-600   rounded-md after:rounded-md  -skew-x-12    after:left-0 after:bg-blue-500 after:h-full  after:w-0   after:transition-all after:bottom-0   hover:after:w-full  after:duration-500 justify-start  items-enter relative  ">
-                  <Link
-                    href={'/categories/all'}
-                    className=" absolute  flex  bg-sblack w-full h-full justify-center      items-center space-x-4"
-                  >
-                    <div className="text-white text-lg skew-x-12 flex justify-center items-center">
-                      Explore More Fitness
-                    </div>
-
-                    <div className=" w-1 h-full -skew-fsx-12      text-white  bg-white"></div>
-                  </Link>
-                </div>
-              )}
-            </React.Fragment>
-          ))}
+                      <div className=" w-1 h-full -skew-fsx-12      text-white  bg-white"></div>
+                    </Link>
+                  </div>
+                )} */}
+              </React.Fragment>
+            ))}
+          </div>
+          {/* Explore More Fitness */}
         </div>
-        {/* Explore More Fitness */}
       </div>
+
       <div className=" w-full h-auto flex justify-center mt-10 items-center">
         <div className="w-[96%] h-96 max-w-[1200px] relative   bhgg-red-700 flex justify-center items-center ">
           <div className="w-[95%] lg:h-24 sm:h-28 h-32   bg-blue-400  skew-y-12"></div>

@@ -4,6 +4,7 @@ description: Learn how accountability can significantly boost your fitness progr
 category: fitness
 imageURl: https://images.pexels.com/photos/4158898/pexels-photo-4158898.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 slug: accountability-in-fitness
+
 date: "2023-01-02"
 authors:
   - shadcn
