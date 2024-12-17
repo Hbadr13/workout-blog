@@ -10,10 +10,14 @@ const Card = ({
   imageUrl,
   title,
   description,
+  category,
+  date,
   slug,
 }: {
   imageUrl: string;
   title: string;
+  category: string;
+  date:string;
   description: string;
   slug: string;
 }) => {
@@ -37,7 +41,7 @@ const Card = ({
   return (
     <div
       ref={ref}
-      className=" w-[95%] sm:w-[100%]  sm:h-[600px]     md:h-[500px]  lg:h-[500px]  h-[450px]   bdsg-red-700    flex   justify-start items-start relative "
+      className=" w-[95%] sm:w-[100%]  sm:h-[450px]      md:h-[500px]  lg:h-[500px]  h-[350px]   bdsg-red-700    flex   justify-start items-start relative "
     >
 
 
@@ -68,9 +72,10 @@ const Card = ({
               hidden: { opacity: 0, x: 50 },
             }}
             transition={{ duration: 1 }}
-            className="w-full  flex  flex-col   justify-start items-start  bgg-blue-500  bg-dblack  space-y-4  "
+            className="w-full  flex  flex-col   justify-start items-start  bgg-blue-500  bg-dblack  space-y-3  "
           >
-            <button className="text-xl  text-start  w-full text-blue-600 font-bold ">
+            <div    className="  font-bold  w-full    h-8 items-center flex flex-row   text-[#27165a] "> {date}  <h1 className=" text-3xl ml-2 -mt-3 font-bold">.</h1><Link href="/categories/all" className=" ml-1">{category}</Link> <h1 className=" text-3xl ml-1 -mt-3 font-bold">.</h1></div>
+            <button className="text-xl  text-start   w-full text-[#27165a] font-bold ">
               {title}
             </button>
             <p className="text-gray-600   text-start font-normal text-md"> {description}</p>

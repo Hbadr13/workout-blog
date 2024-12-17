@@ -121,6 +121,8 @@ interface BlogType {
   slug: string;
   title: string;
   description: string;
+  category : string;
+  date : string;
   imageUrl?: string;
 }
 
@@ -202,17 +204,19 @@ const BlogList = ({ blogs }: { blogs: BlogType[] }) => {
       </div>
 
       <div className=" mt-32   w-screen max-w-[1200px] mx-auto">
-        <div className="w-full h-full px-4 space-y-8 flex justify-center flex-col items-center">
-          <div className=" w-full  px-6  bfg-red-800 sm:text-left text-4xl text-blue-600 font-bold  text-capitalize m-0">
+        <div className="w-full h-full px-4 space-y-10 flex justify-center flex-col items-center">
+          <div className="  md:w-full w-[75%] sm:px-4  bfg-red-800 sm:text-left text-4xl text-[#2f1c6a] font-bold  text-capitalize m-0">
             Top Stories
           </div>
-          <div className="w-full h-full px-4 space-x-10 flex justify-center flex-row items-center">
+          <div className="md:w-full w-[90%] sm:w-[75%] h-full  px-4    md:space-y-0 md:space-x-10 flex justify-center  flex-col md:flex-row items-center">
             {blogs.map((blog: BlogType, index: number) => (
               <React.Fragment key={index}>
                 {index <= 2 && (
                   <Card
                     imageUrl={blog.imageUrl ? blog.imageUrl : "/image2.jpg"}
                     title={blog.title}
+                    category={blog.category}
+                    date={blog.date}
                     description={blog.description}
                     slug={blog.slug}
                   />
@@ -284,6 +288,8 @@ export const getStaticProps = async () => {
       slug: data.slug,
       title: data.title,
       description: data.description,
+      category : data.category,
+      date : data.date,
       imageUrl: data.imageURl,
     };
     return value;
