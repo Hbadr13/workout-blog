@@ -5,73 +5,18 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
-import rehypeHighlight from "rehype-highlight";
 import matter from "gray-matter";
-import fs from "fs";
-import path from "path"; // Import path for working with file paths
+import fs, { readFileSync } from "fs";
+import path from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { rehypePrettyCode } from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import remarkGfm from "remark-gfm";
-import DemoSlider from "@/components/DemoSlider";
-import ShareLinks from "@/components/ShareLinks";
 import ShareButtons from "@/components/ShareLinks";
+import Link from "next/link";
+import { BlogType } from "@/interface/IBlog";
 
-import { FacebookShareButton } from "react-share";
-import SliderButtons from "@/components/SliderButtons";
-const button = [
-  {
-    id: 1,
-    text: "Roberto Nickson",
-    link: "https://www.pexels.com/@rpnickson/",
-    type: "btn-dark btn-circle",
-  },
-];
 
-const data_1 = [
-  {
-    id: 1,
-    title: "ARE AWESOME",
-    tagline: "NEXTJS 13 & SWIPER SLIDER",
-    image: "/image1.jpg",
-    buttons: [
-      {
-        id: 1,
-        text: "Roberto Nickson",
-        link: "https://www.pexels.com/@rpnickson/",
-        type: "btn-dark btn-circle",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "GIVE IT A SHOOT",
-    tagline: "IF YOU LIKE IT",
-    image: "/image2.jpg",
-    buttons: [
-      {
-        id: 1,
-        text: "Julia M Cameron",
-        link: "https://www.pexels.com/@julia-m-cameron/",
-        type: "btn-dark btn-circle",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "ARE AWESOME",
-    tagline: "NEXTJS 13 & SWIPER SLIDER",
-    image: "/image1.jpg",
-    buttons: [
-      {
-        id: 1,
-        text: "Roberto Nickson",
-        link: "https://www.pexels.com/@rpnickson/",
-        type: "btn-dark btn-circle",
-      },
-    ],
-  },
-];
 
 type Props = {
   params: { slug: string };
@@ -80,9 +25,11 @@ type Props = {
 export default function BlogPage({
   data,
   htmlContent,
+  RelatedPostsTopics
 }: {
   data: any;
   htmlContent: string;
+  RelatedPostsTopics: BlogType[]
 }) {
   return (
     <div className=" mt-32  text-black   flex justify-center items-center flex-col w-[1020px] mx-auto">
@@ -103,64 +50,57 @@ export default function BlogPage({
           }
         />
       </div>
-      <div className="flex w-[90%]    space-y-4  dfbg-black py-8  flex-col   ">
-        <div className="flex space-y-2  ml-20 flex-col">
-          <h1 className=" text-black ml-2 text-xl font-serif">Related Blogs</h1>
-          <div className=" w-32 h-1   justify-end  flex ml-2    bg-blue-500 roundeffd-md  -skew-x-12      items-enter relative  ">
-            <div className=" w-1 h-full -skew-fsx-12   mr-5     text-white  bg-white"></div>
-          </div>
-        </div>
-        <div className="w-full   flex justify-center items-center">
-          <DemoSlider data={data_1} />
-        </div>
-      </div>
 
-      <div className="w-full  space-y-5 py-5  flex flex-col">
-        <div className="flex  flex-row w-full    items-center justify-start  h-auto space-x-5">
-          <div className=" w-96  flex justify-center items-center  h-48">
-            <Image
-              src={"/image1.jpg"}
-              className="  object-fill  bg-blue-700   w-full      rounded-md   "
-              width={1000}
-              height={1000}
-              alt="man"
-            />
-          </div>
+      <div className="text-2xl md:text-3xl lg:text-5xl text-[#2f1c6a] py-10 ">Related posts</div>
+      {
 
-          <div className="w-full flex-col  h-full  flex  justify-center space-y-3">
-            <h1 className=" text-black text-md  font-bold">
-              Importance of Accountability: How It Improves Fitness Results
-            </h1>
-            <p className="text-     font-normal   ">
-              {" "}
-              Discover how to maintain a healthy, balanced diet without feeling
-              deprived, and enjoy the foods you love while nourishing your body{" "}
-            </p>
-            <p className=" bg-blue-500  inline-block px-9 py-2    w-48 text-center rounded-full text-white mt-10 lg:mt-20">
-              <a   href="">
-                <span>Read more</span>
-              </a>
-            </p>
+        RelatedPostsTopics?.map((topic) =>
+          <div className="w-full  space-y-5 py-5  flex flex-col">
+            <div className="flex  flex-row w-full    items-center justify-start  h-auto space-x-5">
+              <Link href={topic.slug} className=" relative w-96  flex justify-center items-center  h-48">
+                <Image
+                  src={"/image1.jpg"}
+                  className="  absolute hover:scale-[102%] duration-300  object-fill  bg-blue-700   w-full      rounded-md   "
+                  width={1000}
+                  height={1000}
+                  alt="man"
+                />
+              </Link>
+
+              <div className="w-full flex-col  h-full  flex  justify-center space-y-3">
+                <Link href={`/blog/${topic.slug}`} className=" text-black text-md  font-bold hover:underline active:text-blue-700 hover:underline-offset-1 ">
+                  {topic.title}
+                </Link>
+                <p className="text-     font-normal   ">
+                  {topic.description}
+                </p>
+                <Link href={`/blog/${topic.slug}`} className=" bg-blue-500 hover:scale-[102%] duration-300 active:scale-[101%] active:bg-blue-400  inline-block px-9 py-2    w-48 text-center rounded-full text-white mt-10 lg:mt-20">
+                  Read more
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        )
+      }
     </div>
   );
 }
 
-// Define static paths for the dynamic pages
 export const getStaticPaths = async () => {
-  const contentDir = path.join(process.cwd(), "content");
-  const filenames = fs.readdirSync(contentDir);
-
+  let filenames: string[] = []
+  const dirAllCategories = fs.readdirSync("content/categories", "utf-8");
+  const blogByCategories = dirAllCategories.map((dir) => {
+    const _dirCategories = fs.readdirSync("content/categories/" + dir, "utf-8");
+    filenames = filenames.concat(_dirCategories)
+  })
   const paths = filenames.map((filename) => {
-    const slug = filename.replace(/\.md$/, ""); // Remove the file extension
+    const slug = filename.replace(/\.md$/, "");
     return { params: { slug } };
   });
 
   return {
     paths,
-    fallback: false, // Only generate pages for the defined paths
+    fallback: false,
   };
 };
 
@@ -169,7 +109,7 @@ export const getStaticProps = async ({ params }: Props) => {
     .use(remarkParse)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeStringify, { allowDangerousHtml: true })
-    .use(remarkGfm) // Add this to support tables
+    .use(remarkGfm)
     .use(rehypeSlug)
     .use(rehypePrettyCode, {
       theme: "github-dark",
@@ -182,16 +122,43 @@ export const getStaticProps = async ({ params }: Props) => {
     })
     .use(rehypeAutolinkHeadings);
 
-  const filePath = path.join(process.cwd(), "content", `${params.slug}.md`);
+
+
+
+  let selectCategory = ''
+  const dirAllCategories = fs.readdirSync("content/categories", "utf-8");
+  for (let dir of dirAllCategories) {
+    const _dirCategories = fs.readdirSync("content/categories/" + dir, "utf-8");
+    if (fs.existsSync(`content/categories/${dir}/${params.slug}.md`)) {
+      selectCategory = dir
+      break
+    }
+  }
+  const filePath = path.join(process.cwd(), `content/categories/${selectCategory}`, `${params.slug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
 
   const htmlContent = (await processor.process(content)).toString();
-
+  const RelatedPostsTopics: BlogType[] = data.RelatedPosts.map((file: string) => {
+    const fileContent = readFileSync(file, "utf-8");
+    const { data } = matter(fileContent);
+    const value: BlogType = {
+      slug: data.slug || '',
+      title: data.title || '',
+      description: data.description || '',
+      category: data.category || '',
+      date: data.date || '',
+      imageURL: data.imageURL || '',
+      RelatedPosts: data.RelatedPosts
+    };
+    return value;
+  });
   return {
     props: {
       data,
       htmlContent,
+      RelatedPostsTopics
     },
   };
 };
+

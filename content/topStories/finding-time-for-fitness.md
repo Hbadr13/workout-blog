@@ -1,8 +1,8 @@
 ---
 title: "Finding Time for Fitness: Strategies for a Busy Schedule"
 description: Discover effective strategies for fitting exercise into your busy day, no matter how hectic your schedule may be. Learn tips for staying active and healthy, even with a packed agenda.
-category: fitness
-imageURl: https://images.pexels.com/photos/3755753/pexels-photo-3755753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+category: Motivation & Lifestyle
+imageURL: https://images.pexels.com/photos/3755753/pexels-photo-3755753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 slug: finding-time-for-fitness
 date: "2023-01-02"
 authors:

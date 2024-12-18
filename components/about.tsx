@@ -8,7 +8,7 @@ const About = () => {
     };
 
     return (
-        <section className="bg-blue-50 p-8 md:p-16">
+        <section className="bg-blue-50 p-8 md:p-16 mt-52">
             <div className="max-w-5xl  flex  flex-col  md:flex-row space-x-5 mx-auto">
                 <div className=' w-full md:w-1/2 flex justify-start flex-col p-6 items-start  fdgbg-red-600'>
 
@@ -46,10 +46,10 @@ const About = () => {
                 </div>
 
                 <div className=" grid-cols-1 w-full  md:w-1/2  space-y-4  flex flex-col md:grid-cols-2 gap-8">
-                
+
                     <div className="relative bgg-black">
                         <div className='w-[80%] ml-5 relative animate-pulse'>
-                            <img src="/image2.jpg" alt="High Quality Video" className="rounded-lg shadow-lg" />      
+                            <img src="/image2.jpg" alt="High Quality Video" className="rounded-lg shadow-lg" />
                         </div>
                         <div className='w-auto  animate-bounce  h-auto absolute top-40 right-0   '>
                             <div className=" -skew-x-12    bg-white     px-3 py-2    rounded-r-md shadow-md border-l-4  border-blue-400 text-blue-500 ">
@@ -64,13 +64,13 @@ const About = () => {
 
                                     <span>
                                         High Quality Video
-                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                   
+
                     <div className="relative">
                         {!isVideoActive ? (
                             <div className=" flex justify-end items-end" onClick={handleVideoClick}>
@@ -102,7 +102,7 @@ const About = () => {
                                             </svg>
                                             <span>
 
-                                            Professional Trainer
+                                                Professional Trainer
                                             </span>
                                         </div>
                                     </div>

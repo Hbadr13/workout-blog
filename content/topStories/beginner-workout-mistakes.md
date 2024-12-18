@@ -1,8 +1,8 @@
 ---
 title: "Beginner Workout Mistakes: Common Pitfalls and How to Avoid Them"
 description: A guide to the most common workout mistakes beginners make and practical tips to avoid them for a successful fitness journey.
-category: fitness
-imageURl: https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+category: Workout & Training
+imageURL: https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 slug: beginner-workout-mistakes
 date: "2023-01-02"
 authors:

@@ -1,8 +1,8 @@
 ---
 title: "Fitness Trends of 2025: Emerging Styles and Practices"
 description: A look at the cutting-edge fitness trends of 2025, from AI-powered workouts to personalized health plans, that are set to revolutionize the fitness industry.
-category: fitness
-imageURl: https://images.pexels.com/photos/3756171/pexels-photo-3756171.jpeg
+category: Fitness Technology & Trends
+imageURL: https://images.pexels.com/photos/3756171/pexels-photo-3756171.jpeg
 slug: fitness-trends-2025
 date: "2025-01-01"
 authors:

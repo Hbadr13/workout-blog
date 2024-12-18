@@ -4,11 +4,11 @@ description: Debunk common nutrition myths and discover the facts about carbs, f
 category: Nutrition & Diet
 imageURL: https://images.pexels.com/photos/1234538/pexels-photo-1234538.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 slug: myth-busting-nutrition
+RelatedPosts:
       - "content/categories/Weight_Loss&Management/10-smart-eating-habits.md"
       - "content/categories/Weight_Loss&Management/meal-prep-hacks-for-weight-loss.md"
       - "content/categories/Workout&Training/effective-30-minute-workouts.md"
 date: "2023-01-02"
-RelatedPosts:
 authors:
   - shadcn
 ---

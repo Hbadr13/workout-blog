@@ -83,7 +83,7 @@ interface BlogType {
     slug: string;
     title: string;
     description: string;
-    imageUrl?: string;
+    imageURL?: string;
 
 };
 
@@ -97,7 +97,7 @@ const blogs: BlogType[] = dirContent.map(file => {
         slug: data.slug,
         title: data.title,
         description: data.description,
-        imageUrl: data?.imageUrl
+        imageURL: data?.imageURL
     }
     return value
 })
@@ -116,7 +116,7 @@ const BlogList = () => {
                     >
                         <img
                             className="w-full h-64 object-cover object-top"
-                            src={blog.imageUrl ? blog.imageUrl : "/blogimg.jpg"}
+                            src={blog.imageURL ? blog.imageURL : "/blogimg.jpg"}
                             alt={blog.title}
                         />
                         <div className="p-4">
