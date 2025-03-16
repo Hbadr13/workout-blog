@@ -51,7 +51,7 @@ const Navbar = () => {
   return (
     <div className={`fixed top-0 z-30 w-full transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"} bg-white shadow-lg`}>
       <div className="max-w-[1300px] mx-auto px-1 md:px-4">
-        <div className="flex justify-between items-center py-2 md:py-4">
+        <div className="flex justify-between items-center p-2">
           <div className="">
             <Link className="hidden md:block h-10" href="/">
               <Image src="/logo.png" width={250} height={250} alt="logo" className="hidden md:block h-10 w-44 cursor-pointer" />
