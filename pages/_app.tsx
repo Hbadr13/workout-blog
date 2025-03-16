@@ -12,7 +12,7 @@ const space_Grotesk = Space_Grotesk({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${space_Grotesk.className}  bg-white text-black font-bold`}>
+    <div className={`${space_Grotesk.className} overflow-x-hidden w-full  bg-white text-black font-bold`}>
       <Navbar />
       <Component {...pageProps} />
       <Footer />

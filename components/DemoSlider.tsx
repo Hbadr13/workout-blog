@@ -44,7 +44,7 @@ const DemoSlider: React.FC<DemoSliderProps> = ({ data }) => {
                     modules={[Autoplay, Navigation, Pagination]}
                 >
                     {data.map(({ id, image, tagline, title, buttons }) => (
-                        <SwiperSlide style={{ height: '400px', width: '100%' ,  borderRadius: '20px', overflow: 'hidden' }} key={id}>
+                        <SwiperSlide style={{ height: '400px', width: '100%', borderRadius: '20px', overflow: 'hidden' }} key={id}>
                             <div
                                 className="h-full w-full absolute left-0 top-0"
                                 style={{

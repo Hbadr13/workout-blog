@@ -1,60 +1,74 @@
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import About from "@/components/about";
-
 import fs, { readFileSync } from "fs";
 import matter from "gray-matter";
 import { Metadata } from "next";
+import React, { useEffect } from "react";
+import Link from "next/link";
+import About from "@/components/about";
 import Card from "@/components/card";
 import ClientStats from "@/components/ClientStats";
 import GetStarted from "@/components/GetStarted";
-import Link from "next/link";
 import { BlogType, IBlogByCategories } from "@/interface/IBlog";
-
-
 
 const index = ({ topStories, blogByCategories }: { topStories: BlogType[], blogByCategories: IBlogByCategories[] }) => {
 
-  return (
-    <div className=" ">
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      console.log('hash', hash)
+      if (hash) {
+        const targetElement = document.getElementById(hash.replace("#", ""));
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    };
 
+    scrollToHash();
+    window.addEventListener("hashchange", scrollToHash);
+    return () => {
+      window.removeEventListener("hashchange", scrollToHash);
+    };
+  }, []);
+
+  return (
+    <div className="bg-gradient-to-b from-blue-50 to-blue-100">
       <GetStarted />
-      <div className=" mt-32   w-screen max-w-[1200px] mx-auto">
-        <div className="w-full h-full px-4 space-y-10 flex justify-center flex-col items-center">
-          <div className="  md:w-full w-[75%] sm:px-4  bfg-red-800 sm:text-left text-4xl text-[#2f1c6a] font-bold  text-capitalize m-0">
-            Top Stories
-          </div>
-          <div className="md:w-full w-[90%] sm:w-[75%] h-full  px-4    md:space-y-0 md:space-x-10 flex justify-center  flex-col md:flex-row items-center">
+
+      <div className="mt-32 w-screen max-w-[1200px] mx-auto">
+        <div className="w-full h-full px-6 md:px-8 space-y-8 flex justify-center flex-col items-center">
+          <h2 className="text-4xl md:text-5xl text-blue-900 font-bold text-center">Top Stories</h2>
+          <div className="md:w-full px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
             {topStories?.map((blog: BlogType, index: number) => (
               <React.Fragment key={index}>
-                <Card
-                  imageURL={blog.imageURL ? blog.imageURL : "/image2.jpg"}
-                  title={blog.title}
-                  category={blog.category}
-                  date={blog.date}
-                  description={blog.description}
-                  slug={blog.slug}
-                  hideCategoryName={false}
-                />
-
+                <div
+                >
+                  <Card
+                    imageURL={blog.imageURL ? blog.imageURL : "/image2.jpg"}
+                    title={blog.title}
+                    category={blog.category}
+                    date={blog.date}
+                    description={blog.description}
+                    slug={blog.slug}
+                    hideCategoryName={false}
+                  />
+                </div>
               </React.Fragment>
             ))}
           </div>
         </div>
       </div>
 
-      <div className=" mt-32   w-screen max-w-[1200px] mx-auto space-y-44">
-        {
-          blogByCategories?.map((category) =>
-          (
-            <div className=" w-full h-full px-4 space-y-0 flex justify-center flex-col items-center">
-              <div className="  md:w-full w-[75%] sm:px-4  bfg-red-800 sm:text-left text-4xl text-[#2f1c6a] font-bold  text-capitalize m-0">
-                {(category.category.replace('_', ' ')).replace('&', ' & ')}
-              </div>
-              <div className="md:w-full pt-10 w-[90%] sm:w-[75%] h-full  px-4    md:space-y-0 md:space-x-10 flex justify-center  flex-col md:flex-row items-center">
-                {category?.content?.map((blog: BlogType, index: number) => (
-                  <React.Fragment key={index}>
+      <div id="get-started" className="mt-32 w-screen max-w-[1200px] mx-auto space-y-24">
+        {blogByCategories?.map((category) => (
+          <div className="w-full h-full px-6 md:px-8 space-y-8 flex justify-center flex-col items-center">
+            <h3 className="text-3xl md:text-4xl text-blue-900 font-semibold text-center">
+              {(category.category.replace('_', ' ')).replace('&', ' & ')}
+            </h3>
+            <div className="md:w-full pt-10 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+              {category?.content?.map((blog: BlogType, index: number) => (
+                <React.Fragment key={index}>
+                  <div
+                  >
                     <Card
                       imageURL={blog.imageURL ? blog.imageURL : "/image2.jpg"}
                       title={blog.title}
@@ -63,29 +77,38 @@ const index = ({ topStories, blogByCategories }: { topStories: BlogType[], blogB
                       description={blog.description}
                       slug={blog.slug}
                       hideCategoryName={true}
-
                     />
-
-                  </React.Fragment>
-                ))}
-              </div>
-              <div className="relative h-12 w-full flex items-center justify-center">
-                <div className="absolute z-10  w-[95%] h-[0.5px] bg-[#ccc]"></div>
-                <div className="bg-white relative z-20 inset-y-0 inset-x-0  p-1">
-                  <Link className=" border border-[#ccc] hover:border-slate-600 active:bg-slate-200 duration-300 rounded-full py-3 px-7 font-normal " href={'/category/' + category.category}>View all</Link>
-                </div>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+            <div className="relative pt-12 h-12 w-full flex items-center justify-center">
+              <div className="absolute z-10 w-[95%] h-[1px] bg-blue-200"></div>
+              <div className="relative z-20 inset-y-0 inset-x-0 p-1 rounded-full">
+                <Link
+                  className="border bg-blue-100 border-blue-300 hover:border-blue-600 active:bg-blue-100 duration-300 rounded-full py-3 px-7 font-medium text-blue-900"
+                  href={'/category/' + category.category}
+                >
+                  View all
+                </Link>
               </div>
             </div>
-          ))
-        }
+          </div>
+        ))}
       </div>
-
-
       <ClientStats />
-      <About />
+      <div id="about-us">
+        <About />
+      </div>
+      <div id="contact-us" className="mt-32">
+      </div>
     </div>
   );
 };
+
+
+
+
 
 export const getStaticProps = async () => {
   const dirTopStories = fs.readdirSync("content/topStories", "utf-8");
@@ -130,7 +153,6 @@ export const getStaticProps = async () => {
     }
   })
 
-  // console.log('categories', categories)
   return {
     props: {
       topStories,

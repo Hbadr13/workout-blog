@@ -1,10 +1,10 @@
 import { usePathname, useSearchParams } from 'next/navigation';
 import React, { useEffect } from 'react';
-import {ShareSocial} from 'react-share-social' 
+import { ShareSocial } from 'react-share-social'
 
-const ShareButtons = ({ text, url }:{ text:string, url :string}) => {
- const pathname= usePathname()
- const searchParams = useSearchParams(); // Retrieves the search parameters (e.g., "?x=hello&y=1")
+const ShareButtons = () => {
+  const pathname = usePathname()
+  const searchParams = useSearchParams(); // Retrieves the search parameters (e.g., "?x=hello&y=1")
   let baseUrl = process.env.NEXT_PUBLIC_BASE_URL + pathname
   baseUrl += searchParams.toString() ? '?' : ''
   baseUrl += searchParams.toString()
@@ -20,15 +20,16 @@ const ShareButtons = ({ text, url }:{ text:string, url :string}) => {
     copyContainer: {
       border: "1px solid blue",
       background: "rgb(0,0,0,0.7)",
-      overflow: 'hidden'    },
-    
+      overflow: 'hidden'
+    },
+
     title: {
       color: "white",
     }
   };
   return (
     <ShareSocial
-    
+
       socialTypes={[
         "facebook",
         "twitter",
@@ -39,7 +40,7 @@ const ShareButtons = ({ text, url }:{ text:string, url :string}) => {
         "telegram",
         "email"
       ]}
-      
+
       url={baseUrl}
       // onSocialButtonClicked={(buttonName) => {
       //   console.log(`${buttonName} clicked text`);
@@ -48,7 +49,7 @@ const ShareButtons = ({ text, url }:{ text:string, url :string}) => {
       style={style}
     />
   );
-  
+
 };
 
 export default ShareButtons;

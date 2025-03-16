@@ -1,82 +1,83 @@
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
-const GetStarted = () => {
-    const fullText = `Whether your aim is to loose weight, tone up, gain weight we can put together a gym programme or recommend the right classes for you to attend in our studios.`;
-    const [displayedText, setDisplayedText] = useState("");
-
-    useEffect(() => {
-        let currentIndex = 0;
-
-        const typewriterEffect = setInterval(() => {
-            if (currentIndex < fullText.length) {
-                setDisplayedText((prev) => prev + fullText[currentIndex]);
-                currentIndex++;
-            } else {
-                clearInterval(typewriterEffect);
-            }
-        }, 20);
-
-        return () => clearInterval(typewriterEffect);
-    }, [fullText]);
+const BlogPage = () => {
     return (
-        <div className="h-[800px] xl:h-[1000px] relative">
-            <div className=" absolute  -z-10  opacity-30 bg-[url('/image/Yellow_background-2.jpg')]  bg-cover w-full h-full" />
-            <div className="flex md:flex-row flex-col  bg-blue-50/65 items-end md:items-center h-full ">
-                <div className=" flex flex-col justify-end w-[90%] md:w-[55%] pb-2 pr-3 md:pr-0 md:pb-0 h-[40%] md:h-auto  space-y-8 md:space-y-10 ml-[10%]">
-                    <div className=" relative pl-[18px]  md:pl-[30px] before:contents-[''] before:absolute before:z-10 before:w-1.5 before:md:w-4 before:my-auto before:h-full  before:left-0 before:mr-2  before:rounded-xl before:bg-blue-600">
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 2 }}
-                            className="text-xl md:text-3xl lg:text-4xl xl:text-6xl"
-                        >
-                            We Always Focus On Your Health
-                        </motion.div>
-                    </div>
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 3 }}
-                        className="text-xs md:text-lg  lg:text-xl h-20"
-                    >
-                        {" "}
-                        {displayedText}
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, width: 0 }}
-                        animate={{ opacity: 1, width: 190 }}
-                        transition={{ duration: 2 }}
-                        className="h-10 md:h-12 flex bg-blue-600 rounded-md -skew-x-12   after:rounded-md   mt-7 after:left-0 after:bg-gradient-to-r after:bg-blue-500 after:from-90% after:to-white/25 after:h-full  after:w-0   after:transition-all after:bottom-0  hover:after:w-full  after:duration-500 justify-start  items-enter relative  "
-                    >
-                        <button className="absolute  flex  bg-sblack w-full h-full justify-center items-center space-x-4">
-                            <a
-                                href="#"
-                                className="text-white text-xl md:text-2xl truncate skew-x-12 flex justify-center items-center "
-                            >
-                                Get Started
-                            </a>
-                            <div className="w-1 h-full -skew-fsx-12 text-white bg-white"></div>
-                        </button>
-                    </motion.div>
-                </div>
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
-                    className="w-full h-[60%] md:h-full md:w-[44%] flex justify-end items-end"
-                >
-                    <Image
-                        src={"/image/handsome-man-is-engaged-gym.png"}
-                        className=" w-[80%] object-contain  h-full md:h-auto"
-                        width={1000}
-                        height={1000}
-                        alt="man"
-                    />
-                </motion.div>
-            </div>
-        </div>)
-}
+        <section className="relative w-full min-h-screen text-white">
+            <div className="relative w-full h-[70vh] content-start flex flex-col items-center justify-center text-center px-6">
+                <div
+                    className="absolute inset-0 bg-cover "
+                    style={{ backgroundImage: "url('/image/athlete.png')" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-600/50 to-gray-900"></div>
 
-export default GetStarted
+                <div className="relative z-10 max-w-3xl">
+                    <h1 className="text-5xl font-bold">Welcome to the Fitness Blog</h1>
+                    <p className="text-lg text-gray-200 mt-4">
+                        Stay updated with the latest tips on workouts, nutrition, and wellness.
+                    </p>
+
+                    <div className="mt-6 flex flex-wrap justify-center gap-4">
+                        <input
+                            type="text"
+                            placeholder="Search articles..."
+                            className="w-72 px-4 py-2 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                        <button className="bg-blue-500 px-5 py-2 rounded-md hover:bg-blue-600 transition-colors">
+                            Search
+                        </button>
+                        <Link href={'/#get-started'} className="bg-blue-500 px-5 py-2 rounded-md hover:bg-blue-600 transition-colors">
+                            Get Started
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+            <div className="relative z-10 bg-gray-900 text-white px-6 md:px-12 py-16">
+                <div className="max-w-5xl mx-auto">
+                    <div className="flex flex-wrap gap-4 justify-center mb-8">
+                        {["Workouts", "Nutrition", "Wellness", "Mindset"].map((category) => (
+                            <button
+                                key={category}
+                                className="bg-gradient-to-r from-pink-500 to-purple-600 px-4 py-2 rounded-md hover:from-pink-600 hover:to-purple-700 transition-all"
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+                    <h2 className="text-3xl font-bold text-center mb-8">What Our Readers Say</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                            <p className="text-gray-200 italic">
+                                "This blog has completely transformed my approach to fitness. The articles are practical and easy to follow!"
+                            </p>
+                            <div className="flex items-center mt-4">
+                                <Image width={100} height={100} src="/static/user1.png" alt="User" className="w-10 h-10 object-cover rounded-full mr-4" />
+                                <div>
+                                    <p className="font-semibold">John Doe</p>
+                                    <p className="text-sm text-gray-400">Fitness Enthusiast</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                            <p className="text-gray-200 italic">
+                                "I love the nutrition tips! They've helped me make better food choices and feel more energized."
+                            </p>
+                            <div className="flex items-center mt-4">
+                                <Image width={100} height={100} src="/static/user2.png" alt="User" className="w-10 h-10 object-cover rounded-full mr-4" />
+                                <div>
+                                    <p className="font-semibold">Jane Smith</p>
+                                    <p className="text-sm text-gray-400">Health Coach</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default BlogPage;
