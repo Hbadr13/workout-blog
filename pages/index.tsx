@@ -96,7 +96,9 @@ const index = ({ topStories, blogByCategories }: { topStories: BlogType[], blogB
           </div>
         ))}
       </div>
-      <ClientStats />
+      <div className="mt-20 md:mt-40">
+        <ClientStats />
+      </div>
       <div id="about-us">
         <About />
       </div>

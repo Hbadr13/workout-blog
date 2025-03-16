@@ -8,12 +8,12 @@ const About = () => {
     };
 
     return (
-        <section className="bg-blue-50 p-8 md:p-16 mt-52">
+        <section className="bg-blue-50 py-8 md:py-20 mt-16 md:mt-52">
             <div className="max-w-5xl flex flex-col md:flex-row space-x-5 mx-auto">
-                <div className='w-full md:w-1/2 flex justify-start flex-col p-6 items-start'>
+                <div className='w-full md:w-1/2 flex justify-start flex-col p-4  md:p-6 items-start'>
 
                     <div className="space-y-6 mb-8">
-                        <h3 className="text-sm font-bold uppercase text-gray-600">About Us</h3>
+                        <h3 className="text-lg font-bold uppercase text-gray-600 border-b-2  w-max">About Us</h3>
                         <h1 className="text-4xl md:text-5xl font-bold">
                             Empowering You with <span className="text-blue-500">Knowledge</span>
                         </h1>

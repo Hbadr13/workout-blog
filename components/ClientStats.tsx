@@ -1,33 +1,50 @@
-import React from 'react'
+import React from "react";
 
 const ClientStats = () => {
     return (
-        <div className=' mt-52 w-full h-auto flex justify-center items-center'>
+        <section className="relative w-full min-h-[400px] flex items-center justify-center overflow-hidden">
+            {/* Background Image with Gradient Overlay */}
+            <div className="absolute inset-0 w-full h-full">
+                <img
+                    src="/man.png"
+                    alt="Background"
+                    className="hidden md:block w-full h-full object-cover object-right"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-800/50" />
+            </div>
 
-            <div className='w-[96%] h-96 max-w-[1200px] relative   bhgg-red-700 flex justify-center items-center '>
-                <div className='w-[95%] lg:h-24 sm:h-28 h-32   bg-wr-primary-dark  skew-y-12'></div>
-                <div className='w-[95%] bg-black/95  absolute -skew-y-6   flex justify-center items-center h-52 md:h-72 '>
-                    <div className=' grid grid-flow-col grihud-flow-row  grid-rows-2   gap-x-20  md:grid-rows-1'>
-                        <div className='w-auto h-auto flex   justify-center space-y-4 items-center flex-col'>
-                            <span className='text-white   font-bold text-3xl'>987</span>
-                            <span className=' text-white text-2xl '>Happy Clients</span>
+            {/* Stats Content */}
+            <div className="relative w-full max-w-7xl mx-auto px-4 py-16 md:py-24">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+                    {[
+                        { count: "987", label: "Happy Clients" },
+                        { count: "112", label: "Completed Projects" },
+                        { count: "75", label: "Awards Won" },
+                    ].map((stat, index) => (
+                        <div
+                            key={index}
+                            className="flex flex-col items-center p-6 rounded-xl bg-white/10 backdrop-blur-sm
+                         border border-white/20 transition-all hover:bg-white/20 hover:transform hover:scale-105"
+                        >
+                            <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-400 mb-2">
+                                {stat.count}
+                            </span>
+                            <span className="text-lg md:text-xl lg:text-2xl font-medium text-white text-center">
+                                {stat.label}
+                            </span>
                         </div>
-                        <div className='w-auto h-auto flex  justify-center space-y-4  items-center flex-col'>
-                            <span className='text-white  font-serif text-3xl'>987</span>
-                            <span className=' text-white text-2xl '>Happy Clients</span>
-                        </div>
-                        <div className='w-auto h-auto flex  justify-center space-y-4  items-center flex-col'>
-                            <span className='text-white  font-serif text-3xl'>907</span>
-                            <span className=' text-white text-2xl '>Happy Clients</span>
-                        </div>
-
-                    </div>
-                </div>
-                <div className='w-full h-full absolute md:flex justify-end items-start hidden btg-blue-700'>
-                    <img src="/man.png" alt="High Quality Video" className=" lg:w-80 lg:h-80 md:w-60 lg-mt-24   -mt-16  -ml-56 md:h-60 " />
+                    ))}
                 </div>
             </div>
-        </div>)
-}
 
-export default ClientStats
+            {/* Decorative Elements */}
+            <div className="absolute inset-0 pointer-events-none">
+                {/* Animated background elements */}
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-blue-400/20 rounded-full blur-3xl" />
+                <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-blue-400/20 rounded-full blur-3xl" />
+            </div>
+        </section>
+    );
+};
+
+export default ClientStats;
