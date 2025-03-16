@@ -84,7 +84,7 @@ export default function BlogPage({
       </div>
 
 
-      <div className="w-full border-t pt-20 mt-12 py-12 md:py-20 px-2 md:px-10">
+      <div className="w-full flex justify-center border-t pt-20 mt-12 py-12 md:py-20 px-2 md:px-10">
         <ShareButtons />
       </div>
       <div className="py-10">

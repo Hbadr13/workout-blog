@@ -37,11 +37,11 @@ const Card = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0.5, x: 20 }}
+      initial={{ opacity: 0.5, x: 10 }}
       animate={controls}
       variants={{
         visible: { opacity: 1, x: 0 },
-        hidden: { opacity: 0.5, x: 20 },
+        hidden: { opacity: 0.5, x: 10 },
       }}
       transition={{ duration: 0.5 }}
       ref={ref}

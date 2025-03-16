@@ -84,9 +84,9 @@ const Navbar = () => {
           <div className="flex items-center space-x-1 md:space-x-4">
             <div ref={searchRef} className="relative">
               {searchOpen && (
-                <div className="flex justify-center space-x-1 absolute top-12 -left-10 w-[270px] md:w-[350px] p-2 bg-white border border-gray-300 shadow-md rounded-lg">
-                  <button className="bg-blue-500 rounded-md p-1 text-white">Seach</button>
-                  <input type="text" className="w-full p-2 border rounded-md focus:outline-none" placeholder="Search..." />
+                <div className="flex justify-center space-x-1 absolute top-12 -left-20 md:-left-40 w-[240px] md:w-[350px] p-1 md:p-2 bg-white border border-gray-300 shadow-md rounded-lg">
+                  <button className="bg-blue-500 rounded-md p-1 text-white text-xs md:text-base">Seach</button>
+                  <input type="text" className="w-full p-1 md:p-2 border rounded-md focus:outline-none" placeholder="Search..." />
                 </div>
               )}
               <button onClick={() => setSearchOpen(!searchOpen)} className="p-2 hover:bg-gray-200 rounded-md">
