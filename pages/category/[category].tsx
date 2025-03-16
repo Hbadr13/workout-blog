@@ -44,7 +44,7 @@ const CategoryPage = ({ category, topicsOfCategory }: { category: string, topics
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
 
-                        <div className="absolute bottom-0 left-0 right-0 p-8">
+                        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
                             <div className="max-w-3xl mx-auto">
                                 <span className="text-purple-400 font-semibold text-sm">
                                     Featured Article

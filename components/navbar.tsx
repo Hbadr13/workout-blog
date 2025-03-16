@@ -53,11 +53,11 @@ const Navbar = () => {
       <div className="max-w-[1300px] mx-auto px-1 md:px-4">
         <div className="flex justify-between items-center py-2 md:py-4">
           <div className="">
-            <Link className="hidden md:block" href="/">
-              <Image src="/logo.png" width={250} height={250} alt="logo" className=" w-44 cursor-pointer" />
+            <Link className="hidden md:block h-10" href="/">
+              <Image src="/logo.png" width={250} height={250} alt="logo" className="hidden md:block h-10 w-44 cursor-pointer" />
             </Link>
-            <Link className=" bg-red-400 block md:hidden " href="/">
-              <Image src="/phone-logo.png" width={100} height={20} alt="logo" className=" w-16 cursor-pointer" />
+            <Link className="  block md:hidden h-10" href="/">
+              <Image src="/phone-logo.png" width={100} height={20} alt="logo" className="block md:hidden h-10 w-16 cursor-pointer" />
             </Link>
           </div>
 

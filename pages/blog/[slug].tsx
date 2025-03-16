@@ -30,7 +30,7 @@ export default function BlogPage({
   RelatedPostsTopics: BlogType[];
 }) {
   return (
-    <div className="mt-32 text-black   w-full max-w-[1300px] mx-auto px-4">
+    <div className="mt-32 text-black   w-full max-w-[1300px] mx-auto px-2 md:px-4">
 
       <section className="relative rounded-xl w-full bg-gradient-to-r from-indigo-600/80 via-purple-500/80 to-pink-600/80 text-white text-center py-10 md:py-20">
         <div className="absolute inset-0 w-full h-full">
@@ -76,7 +76,7 @@ export default function BlogPage({
           {data.category}
         </div>
       </div>
-      <div className="w-full px-5 md:px-10 mt-6 md:mt-10 flex justify-center">
+      <div className="w-full px-1 md:px-10 mt-6 md:mt-10 flex justify-center">
         <div
           className="prose dark:prose-invert text-black font-normal max-w-[900px]"
           dangerouslySetInnerHTML={{ __html: htmlContent }}
